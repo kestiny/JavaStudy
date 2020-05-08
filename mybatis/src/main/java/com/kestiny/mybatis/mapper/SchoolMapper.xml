@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kestiny.mybatis.mapper.SchoolMapper">
+    <resultMap id="SchlloMap" type="com.kestiny.mybatis.entities.School">
+        <id column="nid" jdbcType="INTEGER" property="id"/>
+    </resultMap>
+    <select id="selectAll" resultMap="SchlloMap">
+        select * from school
+    </select>
+    <select id="selectById" parameterType="int" resultMap="SchlloMap">
+        select * from school where nid = #{nid}
+    </select>
+    <delete id="delete" parameterType="int">
+        delete from school where nid = #{nid}
+    </delete>
+    <insert id="save" parameterType="School">
+        insert into school
+        (nid,name,administrator)
+        values
+        (#{nid},#{name},#{administrator})
+    </insert>
+    <update id="update" parameterType="School">
+        update school set
+            name=#{name},
+            administrator=#{administrator}
+        where nid=#{nid}
+    </update>
+</mapper>

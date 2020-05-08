@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kestiny.mybatis.mapper.PersonMapper">
+    <resultMap id="BaseResultMap" type="Person">
+        <id column="nid" jdbcType="INTEGER" property="nid"/>
+        <result column="account" jdbcType="VARCHAR" property="account" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="pswd" jdbcType="VARCHAR" property="pswd" />
+        <result column="school" jdbcType="INTEGER" property="school" />
+        <result column="status" jdbcType="INTEGER" property="status" />
+        <result column="delflag" jdbcType="INTEGER" property="delFlag" />
+        <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+        <result column="uid18" jdbcType="VARCHAR" property="uid18" />
+        <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+        <result column="gold" jdbcType="INTEGER" property="gold" />
+        <result column="experience" jdbcType="INTEGER" property="experience" />
+        <result column="sex" jdbcType="INTEGER" property="sex" />
+        <result column="iconUrl" jdbcType="VARCHAR" property="iconUrl" />
+        <result column="ClothID" jdbcType="INTEGER" property="clothId" />
+        <result column="WeaponID" jdbcType="INTEGER" property="weaponId" />
+        <result column="WingsID" jdbcType="INTEGER" property="wingsId" />
+        <result column="persontype" jdbcType="INTEGER" property="personType" />
+        <result column="OnlineTime" jdbcType="INTEGER" property="onlineTime" />
+        <result column="LastLoginTime" jdbcType="INTEGER" property="lastLoginTime" />
+        <result column="examNumber" jdbcType="INTEGER" property="examNumber" />
+    </resultMap>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select * from person
+    </select>
+    <select id="selectById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select * from person where nid = #{nid}
+    </select>
+    <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select * from person where account = #{name}
+    </select>
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from person where nid = #{nid}
+    </delete>
+    <insert id="save" parameterType="Person">
+        insert into person
+        (nid,account,name,pswd,school,status,delflag,mobile,uid18,nickname,ClothID,WeaponID,WingsID,persontype,OnlineTime,LastLoginTime,examNumber)
+        values
+        (#{nid},#{account},#{name},#{pswd},#{school},#{status},#{delFlag},#{mobile},#{uid18},#{nickname},#{clothId},#{weaponId},#{wingsId},#{personType},#{onlineTime},#{lastLoginTime},#{examNumber})
+    </insert>
+    <update id="updateGold" parameterType="java.lang.Integer">
+        update person set
+            gold=#{param2},
+            experience=#{param3}
+        where nid=#{param1}
+    </update>
+    <update id="update" parameterType="Person">
+        update person set
+            account=#{account},
+            name=#{name},
+            pswd=#{pswd},
+            school=#{school},
+            status=#{status},
+            delflag=#{delFlag},
+            mobile=#{mobile},
+            uid18=#{uid18},
+            nickname=#{nickname},
+            ClothID=#{clothId},
+            WeaponID=#{weaponId},
+            WingsID=#{wingsId},
+            persontype=#{personType},
+            OnlineTime=#{onlineTime},
+            LastLoginTime=#{lastLoginTime},
+            examNumber=#{examNumber}
+        where nid=#{nid}
+    </update>
+</mapper>
