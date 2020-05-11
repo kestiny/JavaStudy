@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>JavaStudy</artifactId>
-        <groupId>org.kestiny</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <groupId>com.kestiny</groupId>
+        <version>0.1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -24,18 +24,5 @@
             <version>8.0.20</version>
             <scope>runtime</scope>
         </dependency>
-
     </dependencies>
-
-    <build>
-        <resources>
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.xml</include>
-                </includes>
-            </resource>
-        </resources>
-    </build>
-
 </project>

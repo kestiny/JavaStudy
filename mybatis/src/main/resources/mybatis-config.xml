@@ -21,6 +21,7 @@
         </environment>
     </environments>
     <mappers>
-        <package name="com.kestiny.mybatis.mapper"/>
+        <mapper resource="mapper/PersonMapper.xml"/>
+        <mapper resource="mapper/SchoolMapper.xml"/>
     </mappers>
 </configuration>
