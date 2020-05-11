@@ -12,4 +12,6 @@
 
 ## mybatis模块
 
-整合使用mybatis和logback进行数据库的CRUD
+- 1.整合使用mybatis和logback进行数据库的CRUD；
+- 2.Mapper.xml统一存放在resource目录下；
+- 3.update语句采用动态sql，此处仅使用了set标签
