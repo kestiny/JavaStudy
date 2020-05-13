@@ -31,7 +31,7 @@ public class SchoolTest {
     }
 
     @Test
-    public void schoolPerson() {
+    public void testPerson() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
         PersonMapper mapper = sqlSession.getMapper(PersonMapper.class);
         List<Person> personList = mapper.selectAll();

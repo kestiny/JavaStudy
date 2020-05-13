@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kestiny.mybatis.mapper.PersonMapper">
     <resultMap id="BaseResultMap" type="Person">
-        <id column="nid" jdbcType="INTEGER" property="id"/>
+        <id column="nid" jdbcType="INTEGER" property="id" javaType="int"/>
     </resultMap>
     <select id="selectAll" resultMap="BaseResultMap">
         select * from person
@@ -33,4 +33,6 @@
         </set>
         where nid=#{id}
     </update>
+
+
 </mapper>
